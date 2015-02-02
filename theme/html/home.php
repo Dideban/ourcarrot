@@ -37,6 +37,22 @@
 						</fieldset>
 					</form>
 				</div>
+				<div class="uk-panel rtl">
+					<fieldset data-uk-margin>
+						<legend>کاربران برخط</legend>
+						<?php for($i=0;$i<20;$i++) { ?>
+							<img src="http://localhost/ourcarrot/theme/img/no-avatar.png" width="32"/>
+						<?php } ?>
+					</fieldset>
+				</div>
+				<div class="uk-panel rtl">
+					<fieldset data-uk-margin>
+						<legend>کاربران فعال</legend>
+						<?php for($i=0;$i<20;$i++) { ?>
+							<img src="http://localhost/ourcarrot/theme/img/no-avatar.png" width="32"/>
+						<?php } ?>
+					</fieldset>
+				</div>
 			</div>
 		</div>
 	</div>
