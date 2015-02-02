@@ -15,7 +15,7 @@
 	</head>
 	<body class="uk-container-center uk-height-1-1">
 	<div class="uk-container uk-container-center uk-width-1-1 uk-height-1-1">
-		<nav class="uk-navbar uk-navbar-attached" style="padding:3px;">
+		<nav class="uk-navbar uk-navbar-attached " style="padding:3px;">
 			<div class="uk-navbar-flip uk-margin-right">
 				<ul class="uk-navbar-nav uk-display-inline-block uk-float-right">
 					<a href="#" class="uk-navbar-brand uk-float-right"><img width="32" src="" alt="logo"></a>
@@ -25,7 +25,20 @@
 			</div>
 		</nav>
 		<div class="uk-grid uk-grid-divider uk-margin" data-uk-grid-margin="">
-			<div class="uk-width-medium-3-4 rtl"><div class="uk-panel uk-panel-box">محل فراخوانی نوشته ها</div></div>
+			<div class="uk-width-medium-3-4 rtl">
+				<?php for($i=1;$i<=5;$i++) { ?>
+				<div class="uk-panel uk-panel-box">
+					<article class="uk-article rtl">
+						<h1 class="uk-article-lead">عنوان نوشته <?= $i ?></h1>
+						<p class="uk-article-meta">توضیحات</p>
+						<p class="">متن نوشته</p>
+						<hr class="uk-article-divider">
+						اطلاعات نوشته (لایک،دیدگاه و...)
+					</article>
+				</div>
+				<?php } ?>
+				<button class="uk-button uk-width-1-1 uk-margin-small-bottom uk-button-primary uk-margin">فراخوانی نوشته های دیگر</button>
+			</div>
 			<div class="uk-width-medium-1-4">
 				<div class="uk-panel rtl">
 					<form class="uk-form uk-width-1-1">
