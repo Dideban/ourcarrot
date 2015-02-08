@@ -4,16 +4,17 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>صفحه ی ورودی</title>
-		<link rel="stylesheet" href="http://localhost/ourcarrot/theme/css/uikit.almost-flat.min.css" />
-		<link rel="stylesheet" href="http://localhost/ourcarrot/theme/css/custom.css" />
-		<script src="http://localhost/ourcarrot/theme/js/jquery.js"></script>
-		<script src="http://localhost/ourcarrot/theme/js/uikit.min.js"></script>
+		<link rel="stylesheet" href="theme/css/uikit.almost-flat.min.css" />
+		<link rel="stylesheet" href="theme/css/custom.css" />
+		<script src="theme/js/jquery.js"></script>
+		<script src="theme/js/uikit.min.js"></script>
 		<meta name="Keywords" content="کلمات کلیدی">
 		<meta name="Description" content="توضیحات">
 		<meta name="author" content="نام نویسنده">
 		<base href=""><!--مهم-->
 	</head>
 	<body class="uk-container-center uk-height-1-1">
+	<img src="<?= $xx ?>"/>
 	<div class="uk-container uk-container-center uk-width-1-1 uk-height-1-1">
 		<nav class="uk-navbar uk-navbar-attached " style="padding:3px;">
 			<div class="uk-navbar-flip uk-margin-right">
