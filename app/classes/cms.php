@@ -11,7 +11,7 @@ class CMS
 	{
 		require('lib/image.php');
 		$img = new Image();
-		$img->captcha('fonts/Yekan.ttf',16,5,'SESSION.captcha_code');
+		$img->captcha('fonts/Arial.ttf',16,5,'SESSION.captcha_code');
 		$img->render();
 	}
 }
