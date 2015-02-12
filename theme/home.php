@@ -14,7 +14,7 @@
 		<base href=""><!--مهم-->
 	</head>
 	<body class="uk-container-center uk-height-1-1">
-	<img src="<?= $xx ?>"/>
+	<img src="captcha" title="captcha image" alt="captcha"/>
 	<div class="uk-container uk-container-center uk-width-1-1 uk-height-1-1">
 		<nav class="uk-navbar uk-navbar-attached " style="padding:3px;">
 			<div class="uk-navbar-flip uk-margin-right">
