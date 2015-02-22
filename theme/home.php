@@ -48,6 +48,7 @@
 							<input type="text" class="uk-width-1-1 uk-margin" dir="ltr"placeholder="نام کاربری/ایمیل">
 							<input type="password" class="uk-width-1-1 uk-margin" dir="ltr"placeholder="رمزعبور">
 							<button class="uk-button uk-button-primary uk-width-1-1 uk-margin">ورود</button>
+                            <a href="./SignUp">ثبت نام</a>
 						</fieldset>
 					</form>
 				</div>
