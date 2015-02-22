@@ -1,25 +1,11 @@
 <?php if( isset($db_error) ) { 	if($db_error == '1') echo '<span style="color:Green">Add Success !</span>'; else echo 'Failed !';
 } ?>
-<form method="post" action="signup">
-<table cellspacing="5">
-<tr>
-<td>firt name :</td>
-<td><input type="text" name="fname" /></td>
-</tr>
-<tr>
-<td>last name :</td>
-<td><input type="text" name="lname" /></td>
-</tr>
-<tr>
-<td>mail :</td>
-<td><input type="text" name="mail" /></td>
-</tr>
-<tr>
-<td>password :</td>
-<td><input type="text" name="pass" /></td>
-</tr>
-<tr>
-<td colspan="2"><input type="submit" value="register" name="btn_register" /></td>
-</tr>
-</table>
+	<form class="uk-form" method="post" action="signup">
+		<fieldset>
+			<div class="uk-form-row"><input class="uk-width-1-1" type="text" name="fname" placeholder="نام"/></div>
+			<div class="uk-form-row"><input class="uk-width-1-1" type="text" name="lname" placeholder="نام خانوادگی"/></div>
+			<div class="uk-form-row"><input class="uk-width-1-1" type="text" name="mail" placeholder="رایانامه"/></div>
+			<div class="uk-form-row"><input class="uk-width-1-1" type="password" name="pass" placeholder="رایانامه"/></div>
+			<div class="uk-form-row"><input class="uk-button uk-button-primary uk-width-1-1" type="submit" name="btn_register" value="ثبت"/></div>
+		</fieldset>
 </form>
