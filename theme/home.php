@@ -14,7 +14,7 @@
 		<base href=""><!--مهم-->
 	</head>
 	<body class="uk-container-center uk-height-1-1">
-	<!--<img src="captcha" title="captcha image" alt="captcha"/>-->
+	<!--<img src="Captcha" title="captcha image" alt="captcha"/>-->
 	<div class="uk-container uk-container-center uk-width-1-1 uk-height-1-1">
 		<nav class="uk-navbar uk-navbar-attached " style="padding:3px;">
 			<div class="uk-navbar-flip uk-margin-right">
@@ -54,7 +54,7 @@
 					<div id="signup" class="uk-modal">
 						<div class="uk-modal-dialog">
 							<div class="uk-modal-header">ثبت نام</div>
-							<?php include ('sign-up.php'); ?>
+							<?php include ('SignUp.php'); ?>
 							<!--<div class="uk-modal-footer">...</div>-->
 						</div>
 					</div>

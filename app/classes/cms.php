@@ -11,7 +11,7 @@ class CMS extends db
 			echo $view->render('home.php');
 			break;
 			case '/SignUp':
-			echo $view->render('sign-up.php');
+			echo $view->render('SignUp.php');
 			break;
 		}
 	}
@@ -33,7 +33,7 @@ class CMS extends db
 		$this->Show($f3, $args);
 	}
 	
-	function captcha($f3)
+	function Captcha($f3)
 	{
 		require('lib/image.php');
 		$img = new Image();
