@@ -5,7 +5,7 @@
 			<div class="uk-form-row"><input class="uk-width-1-1" type="text" name="fname" placeholder="نام"/></div>
 			<div class="uk-form-row"><input class="uk-width-1-1" type="text" name="lname" placeholder="نام خانوادگی"/></div>
 			<div class="uk-form-row"><input class="uk-width-1-1" type="text" name="mail" placeholder="رایانامه"/></div>
-			<div class="uk-form-row"><input class="uk-width-1-1" type="password" name="pass" placeholder="رایانامه"/></div>
+			<div class="uk-form-row"><input class="uk-width-1-1" type="password" name="pass" placeholder="رمز"/></div>
 			<div class="uk-form-row"><input class="uk-button uk-button-primary uk-width-1-1" type="submit" name="btn_register" value="ثبت"/></div>
 		</fieldset>
 </form>
