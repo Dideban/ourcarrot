@@ -54,7 +54,7 @@
 					<div id="signup" class="uk-modal">
 						<div class="uk-modal-dialog">
 							<div class="uk-modal-header">ثبت نام</div>
-							<? include ('sign-up.php'); ?>
+							<?php include ('sign-up.php'); ?>
 							<!--<div class="uk-modal-footer">...</div>-->
 						</div>
 					</div>
