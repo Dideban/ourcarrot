@@ -15,4 +15,6 @@ else
 			<div class="uk-form-row"><input class="uk-button uk-button-primary uk-width-1-1" type="submit" name="btn_register" value="ثبت"/></div>
 		</fieldset>
 </form>
-<?php } ?>
+<?php
+} 
+?>
