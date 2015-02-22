@@ -1,19 +1,6 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>SignUp</title>
-</head>
-
-<body>
-<?php 
-if( isset($db_error) )
-{
-	if($db_error == '1') echo '<span style="color:Green">Add Success !</span>';
-	else echo 'Failed !';
-}
-?>
-<form method="post" action="">
+<?php if( isset($db_error) ) { 	if($db_error == '1') echo '<span style="color:Green">Add Success !</span>'; else echo 'Failed !';
+} ?>
+<form method="post" action="signup">
 <table cellspacing="5">
 <tr>
 <td>firt name :</td>
@@ -36,5 +23,3 @@ if( isset($db_error) )
 </tr>
 </table>
 </form>
-</body>
-</html>

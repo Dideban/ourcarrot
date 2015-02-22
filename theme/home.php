@@ -6,7 +6,7 @@
 		<title>صفحه ی ورودی</title>
 		<link rel="stylesheet" href="theme/css/uikit.almost-flat.min.css" />
 		<link rel="stylesheet" href="theme/css/custom.css" />
-		<script src="theme/js/jquery.js"></script>
+		<script src="theme/js/jquery-1.11.2.min.js"></script>
 		<script src="theme/js/uikit.min.js"></script>
 		<meta name="Keywords" content="کلمات کلیدی">
 		<meta name="Description" content="توضیحات">
@@ -14,7 +14,7 @@
 		<base href=""><!--مهم-->
 	</head>
 	<body class="uk-container-center uk-height-1-1">
-	<img src="captcha" title="captcha image" alt="captcha"/>
+	<!--<img src="captcha" title="captcha image" alt="captcha"/>-->
 	<div class="uk-container uk-container-center uk-width-1-1 uk-height-1-1">
 		<nav class="uk-navbar uk-navbar-attached " style="padding:3px;">
 			<div class="uk-navbar-flip uk-margin-right">
@@ -48,9 +48,16 @@
 							<input type="text" class="uk-width-1-1 uk-margin" dir="ltr"placeholder="نام کاربری/ایمیل">
 							<input type="password" class="uk-width-1-1 uk-margin" dir="ltr"placeholder="رمزعبور">
 							<button class="uk-button uk-button-primary uk-width-1-1 uk-margin">ورود</button>
-                            <a href="./SignUp">ثبت نام</a>
+							<a href="#signup" class="uk-button uk-button-danger uk-width-1-1" data-uk-modal>ثبت نام</a>
 						</fieldset>
 					</form>
+					<div id="signup" class="uk-modal">
+						<div class="uk-modal-dialog">
+							<div class="uk-modal-header">ثبت نام</div>
+							<? include ('sign-up.php'); ?>
+							<div class="uk-modal-footer">...</div>
+						</div>
+					</div>
 				</div>
 				<div class="uk-panel rtl">
 					<fieldset data-uk-margin>
