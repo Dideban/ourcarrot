@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>صفحه ی ورودی</title>
-		<link rel="stylesheet" href="theme/css/uikit.almost-flat.min.css" />
+		<link rel="stylesheet" href="theme/css/uikit.css" />
 		<link rel="stylesheet" href="theme/css/custom.css" />
 		<script src="theme/js/jquery-1.11.2.min.js"></script>
 		<script src="theme/js/uikit.min.js"></script>
