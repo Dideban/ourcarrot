@@ -45,8 +45,9 @@
 						<h1 class="uk-article-lead">عنوان نوشته <?= $i ?></h1>
 						<p class="uk-article-meta">توضیحات</p>
 						<p class="">متن نوشته</p>
-						<hr class="uk-article-divider">
-						اطلاعات نوشته (لایک،دیدگاه و...)
+						<hr class="uk-article-divider uk-margin-bottom-remove">
+						<p class="uk-float-right uk-text-danger">هرگونه تخلف از خطی مشی در روز حشر قابل پیگیری است.</p>
+						<p class="uk-float-left">اطلاعات نوشته (لایک،دیدگاه و...)</p>
 					</article>
 				</div>
 				<?php } ?>
@@ -87,6 +88,14 @@
 						<legend>کاربران برخط</legend>
 						<?php for($i=0;$i<18;$i++) { ?>
 							<img src="http://localhost/ourcarrot/theme/img/no-avatar.png" width="32"/>
+						<?php } ?>
+					</fieldset>
+				</div>
+				<div class="uk-panel rtl">
+					<fieldset data-uk-margin>
+						<legend>برچسب ها</legend>
+						<?php for($i=0;$i<5;$i++) { ?>
+							  <a class="uk-button uk-button-mini uk-button-success" href="#">برچسب  <?= $i+3 ?></a>
 						<?php } ?>
 					</fieldset>
 				</div>
