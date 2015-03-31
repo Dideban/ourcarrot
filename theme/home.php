@@ -36,15 +36,15 @@
 
 		<div class="uk-grid uk-grid-divider uk-margin" data-uk-grid-margin="">
 			<div class="uk-width-medium-3-4 rtl">
-				<?php for($i=1;$i<=5;$i++) { ?>
+				<?php $i=0; foreach( $post as $oc_post ) { $i++; ?>
 				<div class="uk-panel uk-panel-box">
 					<div class="uk-panel-teaser">
 						<img class="" src="http://localhost/ourcarrot/theme/img/i1.jpg" alt="">
 					</div>
 					<article class="uk-article rtl">
 						<h1 class="uk-article-lead">عنوان نوشته <?= $i ?></h1>
-						<p class="uk-article-meta">توضیحات</p>
-						<p class="">متن نوشته</p>
+						<p class="uk-article-meta"><?=$oc_post['date']?></p>
+						<p class=""><?=$oc_post['massage']?></p>
 						<hr class="uk-article-divider uk-margin-bottom-remove">
 						<p class="uk-float-right uk-text-danger">هرگونه تخلف از خطی مشی در روز حشر قابل پیگیری است.</p>
 						<p class="uk-float-left">اطلاعات نوشته (لایک،دیدگاه و...)</p>
@@ -66,12 +66,12 @@
 					</fieldset>
 				</div>
 				<div class="uk-panel rtl">
-					<form class="uk-form uk-width-1-1">
+					<form class="uk-form uk-width-1-1" action="SignIn" method="post">
 						<fieldset data-uk-margin>
 							<legend>ورود</legend>
-							<input type="text" class="uk-width-1-1 uk-margin uk-text-center" dir="ltr"placeholder="نام کاربری/ایمیل">
-							<input type="password" class="uk-width-1-1 uk-margin uk-text-center" dir="ltr"placeholder="رمزعبور">
-							<button class="uk-button uk-button-primary uk-width-1-1 uk-margin">ورود</button>
+							<input type="text" name="username" class="uk-width-1-1 uk-margin uk-text-center" dir="ltr" placeholder="نام کاربری/ایمیل">
+							<input type="password" name="userpass" class="uk-width-1-1 uk-margin uk-text-center" dir="ltr" placeholder="رمزعبور">
+							<button name="btn_login" class="uk-button uk-button-primary uk-width-1-1 uk-margin" type="submit">ورود</button>
 							<a href="#signup" class="uk-button uk-button-danger uk-width-1-1" data-uk-modal>ثبت نام</a>
 						</fieldset>
 					</form>
