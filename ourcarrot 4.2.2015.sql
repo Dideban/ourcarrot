@@ -45,7 +45,7 @@ CREATE TABLE `oc_post` (
   PRIMARY KEY (`ID`),
   KEY `fk_user_id_user_post` (`user_id`),
   CONSTRAINT `fk_user_id_user_post` FOREIGN KEY (`user_id`) REFERENCES `oc_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for oc_user
@@ -55,8 +55,36 @@ CREATE TABLE `oc_user` (
   `ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `fullname` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `userpass` varchar(255) DEFAULT NULL,
+  `num_posts` varchar(255) DEFAULT NULL,
   `access` enum('admin','user') DEFAULT 'user',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for oc_space
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_space`;
+CREATE TABLE `oc_space` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `adress` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `num_members` varchar(255) DEFAULT NULL,
+  `num_posts` varchar(255) DEFAULT NULL,
+  `access` enum('admin','user') DEFAULT 'user',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for oc_space_members
+-- ----------------------------
+DROP TABLE IF EXISTS `oc_space_admins`;
+CREATE TABLE `oc_space_admins` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) NOT NULL,
+  `space_id bigint(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;

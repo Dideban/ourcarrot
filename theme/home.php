@@ -1,106 +1,64 @@
-﻿<!DOCTYPE html>
-<html class="uk-height-1-1">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>صفحه ی ورودی</title>
-		<link rel="stylesheet" href="theme/css/uikit.css" />
-		<link rel="stylesheet" href="theme/css/custom.css" />
-		<script src="theme/js/jquery-1.11.2.min.js"></script>
-		<script src="theme/js/uikit.min.js"></script>
-		<meta name="Keywords" content="کلمات کلیدی">
-		<meta name="Description" content="توضیحات">
-		<meta name="author" content="نام نویسنده">
-		<base href=""><!--مهم-->
-	</head>
-	<body class="uk-container-center uk-height-1-1">
-	<!--<img src="Captcha" title="captcha image" alt="captcha"/>-->
-	<div class="uk-container uk-container-center uk-width-1-1 uk-height-1-1">
-		<nav class="uk-navbar uk-navbar-attached " style="padding:3px;">
-			<div class="uk-navbar-flip uk-margin-right">
-				<ul class="uk-navbar-nav uk-display-inline-block uk-float-right rtl">
-					<a href="#" class="uk-navbar-brand uk-float-right"><img width="32" src="http://localhost/ourcarrot/theme/img/no-avatar.png" alt="logo"></a>
-					<?php for($i=1;$i<=5;$i++) { ?>
-						<a href="#" class="uk-button">دسته <?= $i ?></a>
-					<?php } ?>
-				</ul>
-			</div>
-			<div class="uk-navbar-content uk-margin-left uk-hidden-small">
-				<?php if($is_logged=1){ ?><ul class="uk-navbar-nav"><li><a href="<?= 'SITE_URL/signout'?>" data-uk-tooltip="{pos:'bottom'}" title="خروج"><i class="uk-icon-sign-out uk-icon-small"></i></a></li></ul><?php } ?>
-				<form class="uk-search" data-uk-search method="post" action="search" name="search_form">
-					<input class="uk-search-field" type="search" placeholder="" dir="rtl" name="lookfor">
-					<input type="hidden" name="lookin" value="" />
-				</form>
-			</div>
-		</nav>
+﻿<?php include ('header.php'); ?>
 
-		<div class="uk-grid uk-grid-divider uk-margin" data-uk-grid-margin="">
-			<div class="uk-width-medium-3-4 rtl">
-				<?php $i=0; foreach( $post as $oc_post ) { $i++; ?>
-				<div class="uk-panel uk-panel-box">
-					<div class="uk-panel-teaser">
-						<img class="" src="http://localhost/ourcarrot/theme/img/i1.jpg" alt="">
-					</div>
-					<article class="uk-article rtl">
-						<h1 class="uk-article-lead">عنوان نوشته <?= $i ?></h1>
-						<p class="uk-article-meta"><?=$oc_post['date']?></p>
-						<p class=""><?=$oc_post['massage']?></p>
-						<hr class="uk-article-divider uk-margin-bottom-remove">
-						<p class="uk-float-right uk-text-danger">هرگونه تخلف از خطی مشی در روز حشر قابل پیگیری است.</p>
-						<p class="uk-float-left">اطلاعات نوشته (لایک،دیدگاه و...)</p>
-					</article>
+
+		<!-- فهرست کناری شروع -->
+				<?php include ('Sidebar.php'); ?>
+		<!-- فهرست کناری پایان -->
+		<!-- فرم ورود شروع -->
+				<?php include ('Loginform.php'); ?>
+		<!-- فرم ورود پایان -->
+		<!-- فرم ثبت نام شروع -->
+				<?php include ('SignUp.php'); ?>
+		<!-- فرم ثبت نام پایان -->
+		
+		<div class="col-sm-9 col-md-10 main rtl">
+			<form class="col-xs-12 col-sm-12 col-md-12 pull-right dash">
+				<div class="form-group">
+					<textarea id="sendbox" name="content" data-provide="markdown" rows="5" placeholder="متن خود را بنویسید"></textarea>
 				</div>
-				<?php } ?>
-				<button class="uk-button uk-width-1-1 uk-margin-small-bottom uk-button-primary uk-margin">فراخوانی نوشته های دیگر</button>
-			</div>
-			<div class="uk-width-medium-1-4">
-				<div class="uk-panel rtl">
-					<fieldset data-uk-margin>
-						<legend>هشت نوشته محبوب</legend>
-						<?php for($i=0;$i<8;$i++) { ?>
-							<dl class="uk-description-list-line">
-								<dt>عنوان نوشته <?= $i+68 ?></dt>
-								<dd>توضیحات نوشته شماره <?= $i+68 ?></dd>
-							</dl>
-						<?php } ?>
-					</fieldset>
-				</div>
-				<div class="uk-panel rtl">
-					<form class="uk-form uk-width-1-1" action="SignIn" method="post">
-						<fieldset data-uk-margin>
-							<legend>ورود</legend>
-							<input type="text" name="username" class="uk-width-1-1 uk-margin uk-text-center" dir="ltr" placeholder="نام کاربری/ایمیل">
-							<input type="password" name="userpass" class="uk-width-1-1 uk-margin uk-text-center" dir="ltr" placeholder="رمزعبور">
-							<button name="btn_login" class="uk-button uk-button-primary uk-width-1-1 uk-margin" type="submit">ورود</button>
-							<a href="#signup" class="uk-button uk-button-danger uk-width-1-1" data-uk-modal>ثبت نام</a>
-						</fieldset>
-					</form>
-					<div id="signup" class="uk-modal">
-						<div class="uk-modal-dialog">
-							<div class="uk-modal-header">ثبت نام</div>
-							<?php include ('SignUp.php'); ?>
-							<!--<div class="uk-modal-footer">...</div>-->
+				<button type="submit" class="col-xs-12 col-sm-12 col-md-12 btn btn-success">ارسال</button>
+			</form>
+			<hr/>
+			<div class="row placeholders">
+			 <?php $i=0; for($i;$i<3;$i++) { ?>
+				<div class="col-xs-12 col-sm-12 col-md-12 pull-right dash" id="post_<?= $i ?>">
+					<div class="text-right">
+						<img class="pull-right img-responsive img-rounded" style="margin: 0px 0px 0px 15px;" src="theme/img/avatar.jpg">
+						<span class="name">نام نویسنده <small>دو روز قبل</small></span>
+						<p>
+							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+							<pre dir="ltr" class="text-left"><code>&lt;div class="uk-alert"&gt;...&lt;/div&gt;</code></pre>
+						</p>
+						<img class="attch_img img-responsive" src="theme/img/attach_img.jpg" alt="تصویر پیوستی"/>
+						<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#comment_<?= $i ?>" aria-expanded="false" aria-controls="comment_<?= $i ?>"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+						<button type="button" class="btn btn-success">موافقم</button>
+						<div class="collapse" id="comment_<?= $i ?>" style="margin: 5px;">
+							<div class="well">
+							 <?php $j=0; for($j;$j<3;$j++) { ?>
+								<div class="media rtl dash">
+									<a class="pull-right" href="#"><img class="media-object" src="theme/img/no-avatar.png" alt="تصویر نمایه" width="50"></a>
+									<div class="media-body">
+										<span class="media-heading name">نام نویسنده	<small>دو روز قبل</small></span>
+										این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+										این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+									</div>
+								</div>
+							<?php } ?>
+							<div class="input-group ltr">
+								<span class="input-group-addon btn btn-success" id="send_comment">ارسال</span>
+								<textarea class="form-control rtl" rows="3" placeholder="نظر شما چیست؟" aria-describedby="send_comment"></textarea>
+							</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="uk-panel rtl">
-					<fieldset data-uk-margin>
-						<legend>کاربران برخط</legend>
-						<?php for($i=0;$i<18;$i++) { ?>
-							<img src="http://localhost/ourcarrot/theme/img/no-avatar.png" width="32"/>
-						<?php } ?>
-					</fieldset>
-				</div>
-				<div class="uk-panel rtl">
-					<fieldset data-uk-margin>
-						<legend>برچسب ها</legend>
-						<?php for($i=0;$i<5;$i++) { ?>
-							  <a class="uk-button uk-button-mini uk-button-success" href="#">برچسب  <?= $i+3 ?></a>
-						<?php } ?>
-					</fieldset>
-				</div>
+			<?php } ?>
 			</div>
 		</div>
 	</div>
-	</body>
-</html>
+	</div>
+	<?php include ('footer.php'); ?>
