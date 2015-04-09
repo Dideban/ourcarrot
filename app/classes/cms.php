@@ -11,11 +11,18 @@ class CMS extends db
 			$this->GetPost($f3, $args);
 			echo $view->render('home.php');
 			break;
+			case '/Home':
+			$this->GetPost($f3, $args);
+			echo $view->render('home.php');
+			break;
 			case '/SignUp':
 			echo $view->render('SignUp.php');
 			break;
 			case '/SignIn':
 			echo $view->render('SignIn.php');
+			break;
+			case '/SignOut':
+			echo $view->render('SignOut.php');
 			break;
 			case '/UserCabin':
 			echo $view->render('UserCabin.php');
@@ -23,10 +30,29 @@ class CMS extends db
 		}
 	}
 	
+	function Post($f3, $args)
+	{
+		$db = $this->db;
+		if(isset($_POST['submit_post']))
+		{
+			if(!session_id()) session_start();
+			$massage = trim($_POST['content']);
+			$user_id = $_SESSION['ID'];
+			$date = date('Y-m-d H:i:s');
+			if($massage != '')
+			{
+				$result = $db->exec(' INSERT INTO oc_post(user_id, massage, date) VALUES(:user_id, :massage, :date); ', 
+				array( ':user_id' => $user_id, ':massage' => $massage, ':date' => $date)
+				);
+			}
+		}
+		$this->show($f3, $args);
+	}
+	
 	function GetPost($f3, $args)
 	{
 		$db = $this->db;
-		$result = $db->exec(' SELECT * FROM oc_post ORDER BY ID DESC; ');
+		$result = $db->exec(' SELECT * FROM oc_post,oc_user WHERE oc_post.user_id = oc_user.ID ORDER BY oc_post.ID DESC; ');
 		$f3->set('post', $result);
 	}
 	
@@ -58,12 +84,12 @@ class CMS extends db
 		$db = $this->db;
 		if(isset($_POST['btn_login']))
 		{
-			$username = $_POST['username'];
+			$email = $_POST['email'];
 			$userpass = md5($_POST['userpass']);
-			if($username != '' and $userpass != '')
+			if($email != '' and $userpass != '')
 			{
-				$result = $db->exec(' SELECT * FROM oc_user WHERE username = :username AND userpass = :userpass ',
-				array(':username'=>$username, ':userpass'=>$userpass)
+				$result = $db->exec(' SELECT * FROM oc_user WHERE email = :email AND userpass = :userpass ',
+				array(':email'=>$email, ':userpass'=>$userpass)
 				);
 				if(count($result) == 0)
 					$f3->set('last_error', 'User Not Found.');

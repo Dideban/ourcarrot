@@ -1,4 +1,6 @@
-﻿<?php include ('header.php'); ?>
+﻿<?php if(!session_id()) session_start(); ?>
+
+<?php include ('header.php'); ?>
 
 
 		<!-- فهرست کناری شروع -->
@@ -12,25 +14,23 @@
 		<!-- فرم ثبت نام پایان -->
 		
 		<div class="col-sm-9 col-md-10 main rtl">
-			<form class="col-xs-12 col-sm-12 col-md-12 pull-right dash">
+        <?php if(isset($_SESSION['ID'])): ?>
+			<form method="post" action="" class="col-xs-12 col-sm-12 col-md-12 pull-right dash">
 				<div class="form-group">
 					<textarea id="sendbox" name="content" data-provide="markdown" rows="5" placeholder="متن خود را بنویسید"></textarea>
 				</div>
-				<button type="submit" class="col-xs-12 col-sm-12 col-md-12 btn btn-success">ارسال</button>
+				<button type="submit" name="submit_post" class="col-xs-12 col-sm-12 col-md-12 btn btn-success">ارسال</button>
 			</form>
+         <?php endif; ?>
 			<hr/>
 			<div class="row placeholders">
-			 <?php $i=0; for($i;$i<3;$i++) { ?>
+			 <?php $i=0; foreach( $post as $oc_post ) { $i++; ?>
 				<div class="col-xs-12 col-sm-12 col-md-12 pull-right dash" id="post_<?= $i ?>">
 					<div class="text-right">
 						<img class="pull-right img-responsive img-rounded" style="margin: 0px 0px 0px 15px;" src="theme/img/avatar.jpg">
-						<span class="name">نام نویسنده <small>دو روز قبل</small></span>
+						<span class="name"><?=$oc_post['fullname']?>&nbsp;&nbsp;<small><?=$oc_post['date']?></small></span>
 						<p>
-							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
-							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
-							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
-							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
-							این یک متن نمونه صرفا جهت بررسی و آزمایش است 012345678 !@#$%^&*)(.<br>
+                        	<?=$oc_post['massage']?>
 							<pre dir="ltr" class="text-left"><code>&lt;div class="uk-alert"&gt;...&lt;/div&gt;</code></pre>
 						</p>
 						<img class="attch_img img-responsive" src="theme/img/attach_img.jpg" alt="تصویر پیوستی"/>

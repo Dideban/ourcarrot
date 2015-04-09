@@ -5,11 +5,11 @@
 				<button type="button" class="close pull-left" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="loginformLabel">ورود</h4>
 			</div>
-			<form>
+			<form method="post" action="SignIn">
 			<div class="modal-body">
 				<div class="form-group">
 					<label for="Email1">رایانامه</label>
-					<input type="email" name="username" class="form-control text-center" id="Email1" placeholder="آدرس ایمیل یا نام کاربری خود را وارد نمایید." required autofocus>
+					<input type="email" name="email" class="form-control text-center" id="Email1" placeholder="آدرس ایمیل یا نام کاربری خود را وارد نمایید." required autofocus>
 				</div>
 				<div class="form-group">
 					<label for="Password1">گذرواژه</label>
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button name="btn_login" type="button" class="btn btn-success col-xs-7 col-sm-7 col-md-7 rtl pull-right">ورود</button>
+				<button name="btn_login" type="submit" class="btn btn-success col-xs-7 col-sm-7 col-md-7 rtl pull-right">ورود</button>
 				<a class="btn btn-danger col-xs-3 col-sm-3 col-md-3 rtl pull-left">فراموشی رمز عبور</a>
 			</div>
 			</form>

@@ -13,7 +13,7 @@
 				<button type="button" class="close pull-left" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="signupformLabel">ثبت نام سریع</h4>
 			</div>
-			<form>
+			<form method="post" action="SignUp">
 			<div class="modal-body">
 				<div class="form-group">
 					<label for="username">نام کاربری</label>
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" name="btn_register" class="btn btn-success col-xs-12 col-sm-12 col-md-12">ورود</button>
+				<button type="submit" name="btn_register" class="btn btn-success col-xs-12 col-sm-12 col-md-12">ورود</button>
 			</div>
 			</form>
 		</div>
