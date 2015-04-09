@@ -16,8 +16,8 @@ class DB
 		port='.$this->_DBport.';
 		dbname='.$this->_DBname.'',
 		''.$this->_DBadmin.'',
-		''.$this->_DBpass.''
-		
+		''.$this->_DBpass.'',
+		array(\PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8;')
 		);
 	}
 }
