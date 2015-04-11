@@ -9,8 +9,7 @@
 
 	<base href=""><!--مهم-->
 	<link rel="icon" href="theme/img/favicon.ico">
-	<?php $pagetitle='شبکه ساز هویج';//در محلی ک قرار گرفته دستور عنوان صفحه لود شود. ?>
-	<title><?=$pagetitle?></title>
+	<title><?=$SiteTitle?></title>
 
 	<link href="theme/css/bootstrap.min.css" rel="stylesheet">
 	<link href="theme/css/style.css" rel="stylesheet">
