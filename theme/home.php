@@ -48,7 +48,7 @@
 								</div>
 							<?php endforeach; ?>
 							<div class="input-group ltr">
-								<span class="input-group-addon btn btn-success" id="send_comment">ارسال</span>
+								<span class="input-group-addon btn btn-success" id="send_comment"><button style="border: medium none;">ارسال</button></span>
 								<textarea class="form-control rtl" rows="3" placeholder="نظر شما چیست؟" aria-describedby="send_comment"></textarea>
 							</div>
 							</div>

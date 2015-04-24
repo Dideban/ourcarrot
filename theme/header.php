@@ -9,7 +9,7 @@
 
 	<base href=""><!--مهم-->
 	<link rel="icon" href="theme/img/favicon.ico">
-	<title></title>
+	<title>عنوان</title>
 
 	<link href="theme/css/bootstrap.min.css" rel="stylesheet">
 	<link href="theme/css/style.css" rel="stylesheet">
