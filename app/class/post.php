@@ -11,16 +11,6 @@ class Post
 		});
 	}
 	
-	public function GetComment($f3)
-	{
-		$f3->set('GetComment', function($id)
-		{
-			global $f3db;
-			$result = $f3db->db->exec(' SELECT * FROM oc_comment, oc_user WHERE oc_user.ID = oc_comment.user_id AND oc_comment.post_id = '.$id.'; ');
-			return $result;
-		});
-	}
-	
 	public function SubmitPost($f3)
 	{
 		if(isset($_POST['submit_post']))

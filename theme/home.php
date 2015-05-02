@@ -47,10 +47,15 @@
 									</div>
 								</div>
 							<?php endforeach; ?>
+							<?php if($isLogin()): ?>
+							<form method="post" action="">
 							<div class="input-group ltr">
-								<span class="input-group-addon btn btn-success" id="send_comment"><button style="border: medium none;">ارسال</button></span>
-								<textarea class="form-control rtl" rows="3" placeholder="نظر شما چیست؟" aria-describedby="send_comment"></textarea>
+								<span class="input-group-addon btn btn-success" id="send_comment"><button type="submit" name="submit_comment" style="border: medium none;">ارسال</button></span>
+								<textarea name="post_comment" class="form-control rtl" rows="3" placeholder="نظر شما چیست؟" aria-describedby="send_comment"></textarea>
 							</div>
+							<input type="hidden" name="PID" value="<?=$post['PID']?>" />
+							</form>
+							<?php endif; ?>
 							</div>
 						</div>
 					</div>
