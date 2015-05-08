@@ -30,6 +30,28 @@ class User
 		}
 	}
 	
+	function SignUp($f3)
+	{
+		if( isset($_POST['btn_register']) )
+		{
+			global $f3db;
+			$username = $_POST['username'];
+			$fullname = $_POST['fullname'];
+			$email = $_POST['email'];
+			$userpass = md5($_POST['userpass']);
+			if( $username != '' and $fullname != '' and $email != '' and $userpass != '' )
+			{
+				$result = $f3db->db->exec(' INSERT INTO oc_user(username, fullname, email, userpass)
+				VALUES(:username, :fullname, :email, :userpass) ',
+						array(':username'=>$username, ':fullname'=>$fullname, ':email'=>$email, ':userpass'=>$userpass)
+				);
+				$f3->set('last_error', $result);
+			}
+			else $f3->set('last_error', 'Fill The Blank Part.');
+				
+		}
+	}
+	
 	public function SignOut($f3)
 	{
 		if(!session_id()) session_start();
